@@ -1,0 +1,131 @@
+body{
+    margin:0;
+    display:grid;
+    place-items:center;
+    height:100vh;
+}
+:root{
+    --emoji: #ffdc15;
+    --eyes:#ff1919;
+    --mouth: #000000;
+    --tongue: #f87272;
+}
+.emoji{
+    --size:400px;
+    background:var(--emoji);
+    width:var(--size);
+    height:var(--size);
+    border-radius:50%;
+    position:relative;
+
+}
+
+.eyes{
+    position:absolute;
+   
+    width:250px;
+     margin:auto;
+    left:0;
+    right:0;
+ top:32%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+  
+}
+
+.eye-1, .eye-2{
+    --size:50px;
+    width:var(--size);
+    height:var(--size);
+    position:relative;
+    background:var(--eyes);
+    transform:rotate(-45deg);
+
+}
+.eye-1::after,
+.eye-1::before,
+.eye-2::after,
+.eye-2::before{
+content:'';
+position:absolute;
+background:var(--eyes);
+--size:50px;
+width:var(--size);
+height:var(--size);
+border-radius:100%;
+
+}
+.eye-1::after,
+.eye-2::after{
+    bottom:50%;
+}
+.eye-1::before,
+.eye-2::before{
+   left:50%;
+}
+
+.mouth{
+    position:absolute;
+    bottom:13%;
+    width:230px;
+    height:70px;
+background:var(--mouth);
+   border-radius:100%;
+    left:0;
+    margin:auto;
+    right:0;
+    border-bottom:15px solid var(--mouth);
+ 
+ 
+}
+ 
+.mouth::after{
+    content:'';
+    position:absolute;
+    width:230px;
+    background:var(--mouth);
+
+    height:40px;
+top:-1px;
+ 
+ 
+ 
+}
+.tongue{
+    width:200px;
+    height:30px;
+    background:var(--tongue);
+    position:absolute;
+    bottom:0;
+    left:0;
+    right:0;
+    margin:auto;
+    border-radius:100%;
+    border-bottom:10px solid var(--tongue);
+}
+.tongue::after{
+    content:'';
+    position:absolute;
+    border-top:5px solid var(--tongue);
+ 
+    width:180px;
+    height:12px;
+    z-index:1;
+    border-radius:100%;
+    left:10px;
+    top:4px;
+}
+.button::after{
+    content:'';
+    font-family:'Roboto';
+    padding:.5em .6em;
+    cursor:pointer;
+}
+.button-stop::after{
+    content:'Stop Animation';
+}
+@keyframes bounce{
+    0%{transform:scale(1.1)}
+    100%{transform:scale(1)}
+}
